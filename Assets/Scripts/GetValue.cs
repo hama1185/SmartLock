@@ -11,6 +11,7 @@ public class GetValue : MonoBehaviour
     public TMP_Text ValueW;
 
     Quaternion gyro;
+    Vector3 rotation;
     
     void Start(){
         Input.gyro.enabled = true;    
@@ -18,9 +19,10 @@ public class GetValue : MonoBehaviour
 
     void FixedUpdate(){
         this.gyro = Input.gyro.attitude;
-        ValueX.text = this.gyro.x.ToString();
-        ValueY.text = this.gyro.y.ToString();
-        ValueZ.text = this.gyro.z.ToString();
-        ValueW.text = this.gyro.w.ToString();
+        this.rotation = Input.gyro.rotationRate;
+        ValueX.text = this.rotation.x.ToString();
+        ValueY.text = this.rotation.y.ToString();
+        ValueZ.text = this.rotation.z.ToString();
+        //ValueW.text = this.gyro.w.ToString();
     }
 }
