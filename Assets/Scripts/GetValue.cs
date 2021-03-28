@@ -9,7 +9,7 @@ public class GetValue : MonoBehaviour
 
     Vector3 rotation;
     float waitTime = 3.0f;
-    float thresholdValue = 1.5f;
+    float thresholdValue = 2.0f;
 
     enum Mode{
         None,
