@@ -5,6 +5,9 @@ using TMPro;
 
 public class GetValue : MonoBehaviour
 {
+    public GameObject openImage;
+    public GameObject closeImage;
+
     public TMP_Text now;
 
     Vector3 rotation;
@@ -56,10 +59,12 @@ public class GetValue : MonoBehaviour
 
         if(openFirstFlag && openSecondFlag){
             currentMode = Mode.Open;
+            openImage.SetActive(true);
             Invoke("reset", waitTime);
         }
         else if(closeFirstFlag && closeSecondFlag){
             currentMode = Mode.Close;
+            closeImage.SetActive(true);
             Invoke("reset", waitTime);
         }
         else{
@@ -71,6 +76,8 @@ public class GetValue : MonoBehaviour
 
     void reset(){
         currentMode = Mode.None;
+        openImage.SetActive(false);
+        closeImage.SetActive(false);
         openFirstFlag = false;
         openSecondFlag = false;
         closeFirstFlag = false;
