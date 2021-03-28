@@ -5,10 +5,7 @@ using TMPro;
 
 public class GetValue : MonoBehaviour
 {
-    public TMP_Text ValueX;
-    public TMP_Text ValueY;
-    public TMP_Text ValueZ;
-    public TMP_Text ValueW;
+    public TMP_Text now;
 
     Vector3 rotation;
     float waitTime = 3.0f;
@@ -20,8 +17,12 @@ public class GetValue : MonoBehaviour
         Close
     }
     Mode currentMode;
-    bool frontFlag = false;
-    bool backFlag = false;
+
+    bool openFirstFlag = false;
+    bool openSecondFlag = false;
+    
+    bool closeFirstFlag = false;
+    bool closeSecondFlag = false;
 
     void Start(){
         Input.gyro.enabled = true;  
@@ -30,12 +31,46 @@ public class GetValue : MonoBehaviour
     //Zの変遷で決定する おそよ1.5
     void FixedUpdate(){
         this.rotation = Input.gyro.rotationRate;
-        // ValueX.text = this.rotation.x.ToString();
-        // ValueY.text = this.rotation.y.ToString();
-        // ValueZ.text = this.rotation.z.ToString();
-        // ValueW.text = this.gyro.w.ToString();
+        
+        
+        // 閾値の判定
+
         if(rotation.z > thresholdValue){
-            
+            if(closeFirstFlag){
+                closeSecondFlag = true;
+            }
+            else{
+                openFirstFlag = true;
+            }
         }
+        if(rotation.z < -thresholdValue){
+            if(openFirstFlag){
+                openSecondFlag = true;
+            }
+            else{
+                closeFirstFlag = true;
+            }
+        }
+
+        // flagの判定
+
+        if(openFirstFlag && openSecondFlag){
+            currentMode = Mode.Open;
+        }
+        else if(closeFirstFlag && closeSecondFlag){
+            currentMode = Mode.Close;
+        }
+        else{
+            currentMode = Mode.None;
+        }
+
+        now.text = currentMode.ToString();
+    }
+
+    void resetFlag(){
+        openFirstFlag = false;
+        openSecondFlag = false;
+        closeFirstFlag = false;
+        closeSecondFlag = false;
     }
 }
