@@ -10,19 +10,32 @@ public class GetValue : MonoBehaviour
     public TMP_Text ValueZ;
     public TMP_Text ValueW;
 
-    Quaternion gyro;
     Vector3 rotation;
-    
-    void Start(){
-        Input.gyro.enabled = true;    
-    }
+    float waitTime = 3.0f;
+    float thresholdValue = 1.5f;
 
+    enum Mode{
+        None,
+        Open,
+        Close
+    }
+    Mode currentMode;
+    bool frontFlag = false;
+    bool backFlag = false;
+
+    void Start(){
+        Input.gyro.enabled = true;  
+        currentMode = Mode.None;  
+    }
+    //Zの変遷で決定する おそよ1.5
     void FixedUpdate(){
-        this.gyro = Input.gyro.attitude;
         this.rotation = Input.gyro.rotationRate;
-        ValueX.text = this.rotation.x.ToString();
-        ValueY.text = this.rotation.y.ToString();
-        ValueZ.text = this.rotation.z.ToString();
-        //ValueW.text = this.gyro.w.ToString();
+        // ValueX.text = this.rotation.x.ToString();
+        // ValueY.text = this.rotation.y.ToString();
+        // ValueZ.text = this.rotation.z.ToString();
+        // ValueW.text = this.gyro.w.ToString();
+        if(rotation.z > thresholdValue){
+            
+        }
     }
 }
