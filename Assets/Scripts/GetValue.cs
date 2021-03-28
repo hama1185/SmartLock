@@ -56,9 +56,11 @@ public class GetValue : MonoBehaviour
 
         if(openFirstFlag && openSecondFlag){
             currentMode = Mode.Open;
+            Invoke("reset", waitTime);
         }
         else if(closeFirstFlag && closeSecondFlag){
             currentMode = Mode.Close;
+            Invoke("reset", waitTime);
         }
         else{
             currentMode = Mode.None;
@@ -67,7 +69,8 @@ public class GetValue : MonoBehaviour
         now.text = currentMode.ToString();
     }
 
-    void resetFlag(){
+    void reset(){
+        currentMode = Mode.None;
         openFirstFlag = false;
         openSecondFlag = false;
         closeFirstFlag = false;
