@@ -2,6 +2,9 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GetValue
+    - SendESP
+    - SerialPortUtility.DebugConsole
+    - SerialPortUtility.SerialPortUtilityPro
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -17,9 +20,19 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/Android.unity:
     - Class: 1
@@ -43,27 +56,53 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 11274}
+    - Class: 114
       Script: {instanceID: 11276}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 12266}
+      Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 12422}
+      Script: {instanceID: 11496}
     - Class: 114
-      Script: {instanceID: 12466}
+      Script: {instanceID: 11596}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 12662}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 12724}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12874}
+      Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 12298}
+    - Class: 114
+      Script: {instanceID: 12460}
+    - Class: 114
+      Script: {instanceID: 12472}
+    - Class: 114
+      Script: {instanceID: 12504}
+    - Class: 114
+      Script: {instanceID: 12518}
+    - Class: 114
+      Script: {instanceID: 12700}
+    - Class: 114
+      Script: {instanceID: 12766}
+    - Class: 114
+      Script: {instanceID: 12922}
+    - Class: 114
+      Script: {instanceID: 12926}
+    - Class: 114
+      Script: {instanceID: 13116}
+    - Class: 114
+      Script: {instanceID: 13128}
+    - Class: 114
+      Script: {instanceID: 13142}
+    - Class: 114
+      Script: {instanceID: 13654}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -72,6 +111,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
     - Class: 223
@@ -79,6 +120,18 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: cc4274b586df3c02688bac01b88bd16c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventSystem
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -243,10 +296,10 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: cc4274b586df3c02688bac01b88bd16c
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.EventSystems
-    className: EventSystem
+      Hash: 1699117917dd7d9d85e4daea2059ecd6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SerialPortUtility
+    className: SerialPortUtilityPro
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -261,6 +314,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: 4c6377eb40d30723029f377c5aadfe47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPUPTestScriptSimple
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -271,6 +330,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 8d50388f03ed9801b68225139584f587
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPUPTestScriptGObj
   - hash:
       serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
@@ -303,12 +368,6 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 5f1752ed2092162f016c19510c28a8b9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
-  - hash:
-      serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -319,6 +378,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 2a0981a56759502f3dd265e5e805a846
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPUPTestScriptJSON
   - hash:
       serializedVersion: 2
       Hash: 250cde92787cfdfac7cc4989fc666d2c
@@ -381,6 +446,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: b52089e98954743ef8043fa3b13fb32c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPUPProgramming
+  - hash:
+      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -399,6 +470,18 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: c25d5359aacd9fb3a9e7d87d8ef0895c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPUPTestScriptHTTP
+  - hash:
+      serializedVersion: 2
+      Hash: e54bc221e31b1e9b7f5b7819b5f1da1e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPUPDeviceList
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -409,6 +492,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 4a308bb6b8a7cb949ba405c116caaa54
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SerialPortUtility
+    className: DebugConsole
   - hash:
       serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
@@ -505,6 +594,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 04b430c9b4d3350cc36d3ab17392456c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SendESP
   platform: 13
   scenePathNames:
   - Assets/Scenes/Android.unity
