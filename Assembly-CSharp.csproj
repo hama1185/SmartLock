@@ -37,16 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GetValue.cs" />
-     <Compile Include="Assets\Scripts\SendESP.cs" />
      <Compile Include="Assets\Scripts\udptest.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\ExampleScenes\Scripts\SPUPDeviceList.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\ExampleScenes\Scripts\SPUPProgramming.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\ExampleScenes\Scripts\SPUPTestScriptGObj.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\ExampleScenes\Scripts\SPUPTestScriptHTTP.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\ExampleScenes\Scripts\SPUPTestScriptJSON.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\ExampleScenes\Scripts\SPUPTestScriptSimple.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\Scripts\DebugConsole.cs" />
-     <Compile Include="Assets\SerialPortUtilityPro\Scripts\SerialPortUtilityPro.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -61,7 +52,6 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-     <None Include="Assets\SerialPortUtilityPro\Readme.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />

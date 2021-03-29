@@ -86,16 +86,19 @@ public class udptest : MonoBehaviour
     }
 
 
-    public void senddataUDP()
+    public void sendopendataUDP()
     {
-        //4byte だけテストで送る
-        //0x36353433 = 909456435
         //送るバイト順の、処理順に注意
         //送信成功したら、ESP32 のシリアルモニタで、909456435と表示されます。
-        byte[] data = { 0x33, 0x34, 0x35, 0x36};
-        udp_send.Send(data, 4);
-
-        Debug.Log("Data send! check your ESP32 serial monitor.");
+        byte[] data = { 0x01};
+        udp_send.Send(data, 1);
     }
 
+    public void sendclosedataUDP()
+    {
+        //送るバイト順の、処理順に注意
+        //送信成功したら、ESP32 のシリアルモニタで、909456435と表示されます。
+        byte[] data = { 0x00};
+        udp_send.Send(data, 1);
+    }
 }

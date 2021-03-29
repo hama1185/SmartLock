@@ -5,12 +5,14 @@ using TMPro;
 
 public class GetValue : MonoBehaviour
 {
+    public GameObject connectManager;
     public GameObject openImage;
     public GameObject closeImage;
 
     public TMP_Text now;
 
     Vector3 rotation;
+    udptest udptest;
     float waitTime = 3.0f;
     float thresholdValue = 4.0f;
 
@@ -29,7 +31,8 @@ public class GetValue : MonoBehaviour
 
     void Start(){
         Input.gyro.enabled = true;  
-        currentMode = Mode.None;  
+        currentMode = Mode.None;
+        udptest = connectManager.GetComponent<udptest>();  
     }
     //Zの変遷で決定する おそよ1.5
     void FixedUpdate(){
@@ -60,11 +63,13 @@ public class GetValue : MonoBehaviour
         if(openFirstFlag && openSecondFlag){
             currentMode = Mode.Open;
             openImage.SetActive(true);
+            udptest.sendopendataUDP();
             Invoke("reset", waitTime);
         }
         else if(closeFirstFlag && closeSecondFlag){
             currentMode = Mode.Close;
             closeImage.SetActive(true);
+            udptest.sendclosedataUDP();
             Invoke("reset", waitTime);
         }
         else{
